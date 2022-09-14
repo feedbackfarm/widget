@@ -1,21 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es2018",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmitOnError": true,
-    "lib": ["es2017", "dom"],
-    "strict": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "outDir": "dist",
-    "sourceMap": true,
-    "inlineSources": true,
-    "rootDir": "./",
-    "declaration": true,
-    "incremental": true,
+      "baseUrl": ".",
+      "rootDir": ".",
+      "outDir": "dist",
+      "moduleResolution": "node",
+      "target": "es2015",
+      "module": "esnext",
+      "lib": ["esnext", "es2017", "ES2015", "dom"],
+      "sourceMap": true,
+      "declaration": false,
+      "declarationMap": false,
+      "noImplicitAny": true,
+      "strict": true,
+      "strictNullChecks": true,
+      "strictBindCallApply": true,
+      "strictFunctionTypes": true,
+      "typeRoots": ["node_modules/@types"],
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "paths": {
+      }
   },
-  "include": ["**/*.ts"]
+  "include": ["src/"]
 }
