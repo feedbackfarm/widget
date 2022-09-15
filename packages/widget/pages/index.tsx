@@ -91,10 +91,12 @@ const Widget: NextPage = () => {
   }
 
   function handleFeedbackSubmitted() {
+    window.parent.postMessage("step:submitted", "*");
     setCurrentStep("submitted");
   }
 
   function handleSendAnotherFeedback() {
+    window.parent.postMessage("step:fill", "*");
     setCurrentStep("fill");
   }
 
