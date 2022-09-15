@@ -35,11 +35,60 @@ function initializeTriggers() {
   });
 }
 
+function formatThemeParameter(theme) {
+  if (!theme) {
+    return {};
+  }
+
+  return theme.split(";").reduce(function (obj, str, index) {
+    const strParts = str.split(":");
+    obj[strParts[0].replace(/\s+/g, "")] = strParts[1];
+    return obj;
+  }, {});
+}
+
+function getDataParameters(trigger) {
+  const projectId = trigger.getAttribute("data-feedback-farm-project-id");
+  const identifier = trigger.getAttribute("data-feedback-farm-identifier");
+  const endImageUrl = encodeURIComponent(
+    trigger.getAttribute("data-feedback-farm-end-image-url") || ""
+  );
+  const pageName =
+    trigger.getAttribute("data-feedback-farm-page-name") ||
+    window.location.pathname;
+  const theme = encodeURIComponent(
+    trigger.getAttribute("data-feedback-farm-theme")
+  );
+  const localization = encodeURIComponent(
+    trigger.getAttribute("data-feedback-farm-localization")
+  );
+  const types = encodeURIComponent(
+    trigger.getAttribute("data-feedback-farm-types")
+  );
+
+  return {
+    projectId,
+    identifier,
+    endImageUrl,
+    pageName,
+    theme,
+    localization,
+    types,
+  };
+}
+
 function setupIFrame() {
+  const [trigger] = triggers;
+  if (!trigger) return;
+
+  const params = getDataParameters(trigger);
+  const queryString = Object.keys(params)
+    .map((key) => key + "=" + params[key])
+    .join("&");
+
   const iframe = document.createElement("iframe");
   iframe.id = "feedback-farm-iframe";
-  // iframe.src = `https://widget.feedback.farm?projectId=123`;
-  iframe.src = "http://localhost:3000?projectId=1223";
+  iframe.src = `http://localhost:3000?${queryString}`;
   iframe.style.width = 300;
   iframe.style.border = "none";
   iframe.style.height = 356;
@@ -77,10 +126,10 @@ function detectOutsideClick(e) {
   }
 }
 
-function setupOnWidgetCloseListener() {
-  // Detect widget close request
+function setupMessageListener() {
   window.addEventListener("message", function ({ origin, data }) {
     if (origin === "https://widget.feedback.farm") {
+      // Detect widget close request
       if (data === "closeWidget") {
         closeWidget();
       }
@@ -90,4 +139,4 @@ function setupOnWidgetCloseListener() {
 
 initializeTriggers();
 setupIFrame();
-setupOnWidgetCloseListener();
+setupMessageListener();

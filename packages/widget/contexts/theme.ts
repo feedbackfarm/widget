@@ -9,6 +9,7 @@ export type Theme = {
   disabledButtonTextColor: string;
   textColor: string;
   typeBackgroundColor: string;
+  showFooter: boolean;
 };
 
 const ThemeContext = React.createContext<Theme>({
@@ -20,6 +21,7 @@ const ThemeContext = React.createContext<Theme>({
   disabledButtonTextColor: "#A7A7A7",
   textColor: "#000000",
   typeBackgroundColor: "#FCFBFA",
+  showFooter: false,
 });
 
 export default ThemeContext;
