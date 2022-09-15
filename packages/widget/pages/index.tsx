@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
 
 function getParameters(query: ParsedUrlQuery) {
-  const whiteLabel = false || !!query.whiteLabel;
+  const showFooter = false || !!query.showFooter;
   const projectId = query.projectId as string;
   const identifier = (query.identifier as string) || "";
   const pageName = (query.page as string) || "";
@@ -67,7 +67,7 @@ function getParameters(query: ParsedUrlQuery) {
     projectId,
     theme,
     types,
-    whiteLabel,
+    showFooter,
   };
 }
 
@@ -81,7 +81,7 @@ const Widget: NextPage = () => {
     projectId,
     theme,
     types,
-    whiteLabel,
+    showFooter,
   } = getParameters(router.query);
 
   const [currentStep, setCurrentStep] = useState<"fill" | "submitted">("fill");
@@ -132,7 +132,7 @@ const Widget: NextPage = () => {
                 endImageUrl={endImageUrl}
               />
             )}
-            {!whiteLabel && (
+            {!showFooter && (
               <div className="mt-2 flex justify-center">
                 <span className="text-xs font-bold text-gray-500">
                   Powered by{" "}
