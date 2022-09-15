@@ -87,7 +87,7 @@ const Widget: NextPage = () => {
   const [currentStep, setCurrentStep] = useState<"fill" | "submitted">("fill");
 
   function handleCloseWidget() {
-    alert("close widget");
+    window.parent.postMessage("closeWidget", "*");
   }
 
   function handleFeedbackSubmitted() {
