@@ -1,5 +1,5 @@
 {
-  "name": "@feedback-farm/js",
+  "name": "@feedbackfarm/js",
   "version": "0.0.1",
   "description": "Feedback Farm JS Widget",
   "main": "dist/widget.js",
