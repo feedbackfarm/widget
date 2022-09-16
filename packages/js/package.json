@@ -1,9 +1,8 @@
 {
-  "name": "feedback-farm-js",
-  "version": "0.0.2",
+  "name": "@feedback-farm/js",
+  "version": "0.0.1",
   "description": "Feedback Farm JS Widget",
   "main": "dist/widget.js",
-  "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx rollup --config rollup.config.ts",
