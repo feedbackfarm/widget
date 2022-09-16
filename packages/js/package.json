@@ -1,0 +1,11 @@
+{
+  "name": "feedback-farm-js",
+  "version": "0.0.1",
+  "description": "Feedback Farm JS Widget",
+  "main": "widget.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "codemers",
+  "license": "MIT"
+}
