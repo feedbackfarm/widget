@@ -4,8 +4,13 @@
   "description": "Feedback Farm JS Widget",
   "main": "widget.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "dev": "npx tsc -w"
   },
   "author": "codemers",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  }
 }

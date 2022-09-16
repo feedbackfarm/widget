@@ -1,5 +1,6 @@
+'use strict';
+
 const triggers = document.querySelectorAll("[data-feedback-farm]");
-let outsideClickEventListener;
 
 function initializeTriggers() {
   // Load floatingUI
@@ -15,11 +16,15 @@ function initializeTriggers() {
       const feedbackFarmIFrame = document.getElementById(
         "feedback-farm-iframe"
       );
+      if (!feedbackFarmIFrame) {
+        return;
+      }
       feedbackFarmIFrame.style.display = "block";
 
       setupOutsideClickListener();
 
       // Position widget
+      // @ts-expect-error
       window.Popper.createPopper(trigger, feedbackFarmIFrame, {
         placement: "bottom",
         modifiers: [
@@ -47,9 +52,9 @@ function setupIFrame() {
   const iframe = document.createElement("iframe");
   iframe.id = "feedback-farm-iframe";
   iframe.src = `https://widget.feedback.farm?${queryString}`;
-  iframe.style.width = 300;
+  iframe.style.width = "300px";
   iframe.style.border = "none";
-  iframe.style.height = 356;
+  iframe.style.height = "356px";
   iframe.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
   iframe.style.borderRadius = "18px";
   iframe.style.display = "none";
@@ -58,13 +63,16 @@ function setupIFrame() {
 
 function closeWidget() {
   const feedbackFarmIFrame = document.getElementById("feedback-farm-iframe");
+  if (!feedbackFarmIFrame) {
+    return;
+  }
   feedbackFarmIFrame.style.display = "none";
 
   document.removeEventListener("click", detectOutsideClick);
 }
 
 function setupOutsideClickListener() {
-  outsideClickEventListener = document.addEventListener(
+  document.addEventListener(
     "click",
     detectOutsideClick
   );
@@ -93,18 +101,6 @@ function setupMessageListener() {
       }
     }
   });
-}
-
-function formatThemeParameter(theme) {
-  if (!theme) {
-    return {};
-  }
-
-  return theme.split(";").reduce(function (obj, str, index) {
-    const strParts = str.split(":");
-    obj[strParts[0].replace(/\s+/g, "")] = strParts[1];
-    return obj;
-  }, {});
 }
 
 function getDataParameters(trigger) {
