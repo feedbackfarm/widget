@@ -21,9 +21,7 @@ jobs:
           node-version: 12.x
 
       - name: Install Dependencies
-        run: npm ci
-        run: npm ci --prefix packages/react
-        run: npm ci --prefix packages/js
+        run: npm ci && npm ci --prefix packages/react && npm ci --prefix packages/js
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
