@@ -1,6 +1,5 @@
 import { sendFeedback } from "@feedbackfarm/core";
 import { useState } from "react";
-import useTheme from "../hooks/useTheme";
 
 import { FeedbackType, TypeSelectorType } from "../types/feedback";
 import Button from "./Button";
@@ -8,6 +7,7 @@ import FeedbackTextArea from "./FeedbackTextArea";
 import Header from "./Header";
 import PoweredBy from "./PoweredBy";
 import TypeSelector from "./TypeSelector";
+import useTheme from "../hooks/useTheme";
 
 type Props = {
   identifier: string;
@@ -31,7 +31,6 @@ export default function SubmitFeedback(props: Props) {
   } = props;
 
   const theme = useTheme();
-
   const [feedbackType, setFeedbackType] = useState<FeedbackType>();
   const [feedbackText, setFeedbackText] = useState("");
   const [isLoading, setIsLoading] = useState(false);

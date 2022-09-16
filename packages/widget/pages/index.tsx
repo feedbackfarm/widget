@@ -33,11 +33,12 @@ function getParameters(query: ParsedUrlQuery) {
   const localizationParams = JSON.parse((query.localization as string) || "{}");
   const pageName = (query.pageName as string) || "";
   const projectId = query.projectId as string;
-  const showFooter = true || !!query.showFooter;
-  const themeParams = JSON.parse((query.theme as string) || "{}");
-  const typeParams = JSON.parse((query.types as string) || "{}");
 
-  const types: TypeSelectorType[] = typeParams || defaultTypes;
+  const themeParams = JSON.parse((query.theme as string) || "{}");
+  const typeParams = JSON.parse((query.types as string) || "[]");
+  const types: TypeSelectorType[] =
+    typeParams && typeParams.length > 0 ? typeParams : defaultTypes;
+
   const localization: { [key: string]: any } = {
     headerTitle: "Give Feedback!",
     placeholder: {
@@ -62,7 +63,7 @@ function getParameters(query: ParsedUrlQuery) {
     disabledButtonTextColor: "#A7A7A7",
     buttonTextColor: "#FFFFFF",
     buttonBackgroundColor: "#22c197",
-    showFooter,
+    showFooter: true,
     ...themeParams,
   };
 
@@ -74,7 +75,6 @@ function getParameters(query: ParsedUrlQuery) {
     projectId,
     theme,
     types,
-    showFooter,
   };
 }
 
@@ -88,7 +88,6 @@ const Widget: NextPage = () => {
     projectId,
     theme,
     types,
-    showFooter,
   } = getParameters(router.query);
 
   const [currentStep, setCurrentStep] = useState<"fill" | "submitted">("fill");
