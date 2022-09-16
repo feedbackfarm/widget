@@ -2,15 +2,16 @@
   "name": "feedback-farm-js",
   "version": "0.0.1",
   "description": "Feedback Farm JS Widget",
-  "main": "widget.js",
+  "main": "dist/widget.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc",
+    "build": "npx rollup --config rollup.config.ts",
     "dev": "npx tsc -w"
   },
   "author": "codemers",
   "license": "MIT",
   "devDependencies": {
+    "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.8.3"
   }
 }
