@@ -1,0 +1,32 @@
+{
+  "name": "feedback.farm-widget",
+  "version": "1.0.0",
+  "description": "Feedback Farm Packages",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "changeset": "npx changeset",
+    "release": "npm run build && npm run publish",
+    "build": "npm run build --prefix packages/react && npm run build --prefix packages/js",
+    "publish": "npx changeset publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://codemers@github.com/feedbackfarm/widget.git"
+  },
+  "author": "codemers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/feedbackfarm/widget/issues"
+  },
+  "homepage": "https://github.com/feedbackfarm/widget#readme",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@changesets/cli": "^2.24.4"
+  }
+}
