@@ -46,7 +46,7 @@ function setupIFrame() {
 
   const iframe = document.createElement("iframe");
   iframe.id = "feedback-farm-iframe";
-  iframe.src = `http://localhost:3000?${queryString}`;
+  iframe.src = `https://widget.feedback.farm?${queryString}`;
   iframe.style.width = 300;
   iframe.style.border = "none";
   iframe.style.height = 356;
