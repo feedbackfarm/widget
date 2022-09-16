@@ -5,7 +5,9 @@ import { FeedbackType, TypeSelectorType } from "../types/feedback";
 import Button from "./Button";
 import FeedbackTextArea from "./FeedbackTextArea";
 import Header from "./Header";
+import PoweredBy from "./PoweredBy";
 import TypeSelector from "./TypeSelector";
+import useTheme from "../hooks/useTheme";
 
 type Props = {
   identifier: string;
@@ -28,6 +30,7 @@ export default function SubmitFeedback(props: Props) {
     types,
   } = props;
 
+  const theme = useTheme();
   const [feedbackType, setFeedbackType] = useState<FeedbackType>();
   const [feedbackText, setFeedbackText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -73,21 +76,23 @@ export default function SubmitFeedback(props: Props) {
 
   const buttonIsEnabled = feedbackType && feedbackText;
   return (
-    <>
-      <Header title={localization.headerTitle} onClose={onClose} />
-      <div className="mt-4">
-        <TypeSelector
-          selectedType={feedbackType}
-          onSelect={handleSelectFeedbackType}
-          types={types}
-        />
-      </div>
-      <div className="mt-4">
-        <FeedbackTextArea
-          placeholder={localization.placeholder[feedbackType || "DEFAULT"]}
-          text={feedbackText}
-          onTextChange={handleFeedbackTextChange}
-        />
+    <div className="flex flex-col justify-between h-full">
+      <div>
+        <Header title={localization.headerTitle} onClose={onClose} />
+        <div className="mt-4">
+          <TypeSelector
+            selectedType={feedbackType}
+            onSelect={handleSelectFeedbackType}
+            types={types}
+          />
+        </div>
+        <div className="mt-4">
+          <FeedbackTextArea
+            placeholder={localization.placeholder[feedbackType || "DEFAULT"]}
+            text={feedbackText}
+            onTextChange={handleFeedbackTextChange}
+          />
+        </div>
       </div>
       <div className="mt-2">
         <Button
@@ -96,7 +101,8 @@ export default function SubmitFeedback(props: Props) {
           onClick={handleSubmitFeedback}
           isLoading={isLoading}
         />
+        {theme.showFooter && <PoweredBy />}
       </div>
-    </>
+    </div>
   );
 }

@@ -1,20 +1,43 @@
-import type { NextPage } from "next";
-import Head from "next/head";
+import { ParsedUrlQuery } from "querystring";
 import { useState } from "react";
+import Head from "next/head";
+import type { NextPage } from "next";
 
 import { TypeSelectorType } from "../types/feedback";
 import FeedbackSubmitted from "../components/FeedbackSubmitted";
 import SubmitFeedback from "../components/SubmitFeedback";
 import ThemeContext, { Theme } from "../contexts/theme";
 import { useRouter } from "next/router";
-import { ParsedUrlQuery } from "querystring";
+
+const defaultTypes = [
+  {
+    imageUrl: "/svg/zap.svg",
+    text: "Feature",
+    type: "FEATURE",
+  },
+  {
+    imageUrl: "/svg/bug.svg",
+    text: "Bug",
+    type: "BUG",
+  },
+  {
+    imageUrl: "/svg/monkey.svg",
+    text: "Other",
+    type: "OTHER",
+  },
+];
 
 function getParameters(query: ParsedUrlQuery) {
-  const whiteLabel = false || !!query.whiteLabel;
-  const projectId = query.projectId as string;
-  const identifier = (query.identifier as string) || "";
-  const pageName = (query.page as string) || "";
   const endImageUrl = (query.endImageUrl as string) || "/svg/party.svg";
+  const identifier = (query.identifier as string) || "";
+  const localizationParams = JSON.parse((query.localization as string) || "{}");
+  const pageName = (query.pageName as string) || "";
+  const projectId = query.projectId as string;
+
+  const themeParams = JSON.parse((query.theme as string) || "{}");
+  const typeParams = JSON.parse((query.types as string) || "[]");
+  const types: TypeSelectorType[] =
+    typeParams && typeParams.length > 0 ? typeParams : defaultTypes;
 
   const localization: { [key: string]: any } = {
     headerTitle: "Give Feedback!",
@@ -28,25 +51,8 @@ function getParameters(query: ParsedUrlQuery) {
     sendFeedbackButtonText: "Send!",
     submitFeedbackMessage: "Your feedback has been submitted!",
     submittedFeedbackHeaderTitle: "Thank you!",
+    ...localizationParams,
   };
-
-  const types: TypeSelectorType[] = [
-    {
-      imageUrl: "/svg/zap.svg",
-      text: "Feature",
-      type: "FEATURE",
-    },
-    {
-      imageUrl: "/svg/bug.svg",
-      text: "Bug",
-      type: "BUG",
-    },
-    {
-      imageUrl: "/svg/monkey.svg",
-      text: "Other",
-      type: "OTHER",
-    },
-  ];
 
   const theme: Theme = {
     textColor: "#000000",
@@ -57,6 +63,8 @@ function getParameters(query: ParsedUrlQuery) {
     disabledButtonTextColor: "#A7A7A7",
     buttonTextColor: "#FFFFFF",
     buttonBackgroundColor: "#22c197",
+    showFooter: true,
+    ...themeParams,
   };
 
   return {
@@ -67,7 +75,6 @@ function getParameters(query: ParsedUrlQuery) {
     projectId,
     theme,
     types,
-    whiteLabel,
   };
 }
 
@@ -81,7 +88,6 @@ const Widget: NextPage = () => {
     projectId,
     theme,
     types,
-    whiteLabel,
   } = getParameters(router.query);
 
   const [currentStep, setCurrentStep] = useState<"fill" | "submitted">("fill");
@@ -106,14 +112,14 @@ const Widget: NextPage = () => {
 
   return (
     <ThemeContext.Provider value={theme}>
-      <div>
+      <div className="h-screen">
         <Head>
           <title>Feedback Farm Widget</title>
         </Head>
 
-        <main>
+        <main className="h-screen">
           <div
-            className="w-full p-4"
+            className="w-full p-4 h-full"
             style={{ backgroundColor: theme.backgroundColor }}
           >
             {currentStep === "fill" ? (
@@ -133,21 +139,6 @@ const Widget: NextPage = () => {
                 onSendAnotherFeedback={handleSendAnotherFeedback}
                 endImageUrl={endImageUrl}
               />
-            )}
-            {!whiteLabel && (
-              <div className="mt-2 flex justify-center">
-                <span className="text-xs font-bold text-gray-500">
-                  Powered by{" "}
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://feedback.farm?ref=widget"
-                    className="text-[#22c197]"
-                  >
-                    feedback.farm
-                  </a>
-                </span>
-              </div>
             )}
           </div>
         </main>
