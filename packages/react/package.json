@@ -4,6 +4,7 @@
   "description": "React widget for feedback.farm",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "private": false,
   "files": [
     "dist"
   ],
