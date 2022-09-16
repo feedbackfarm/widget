@@ -1,6 +1,7 @@
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
 import { terser } from "rollup-plugin-terser";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
 const packageJson = require("./package.json");
 
@@ -8,7 +9,7 @@ export default [
   {
     input: "src/index.ts",
     external: ["react"],
-    plugins: [esbuild(), terser()],
+    plugins: [peerDepsExternal(), esbuild(), terser()],
     output: [
       {
         file: packageJson.main,
