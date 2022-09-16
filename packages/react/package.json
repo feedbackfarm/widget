@@ -1,0 +1,38 @@
+{
+  "name": "@feedbackfarm/react",
+  "version": "3.0.2-alpha",
+  "description": "React widget for feedback.farm",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feedbackfarm/widget.git"
+  },
+  "author": "codemers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/feedbackfarm/widget/issues"
+  },
+  "homepage": "https://github.com/feedbackfarm/widget#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@rollup/plugin-typescript": "^8.5.0",
+    "@types/react": "^18.0.20",
+    "react": "^18.2.0",
+    "rollup": "^2.79.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-esbuild": "^4.10.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.3"
+  }
+}
