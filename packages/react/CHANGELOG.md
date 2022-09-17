@@ -1,5 +1,11 @@
 # @feedbackfarm/react
 
+## 4.0.2
+
+### Patch Changes
+
+- 8a7ac6f: fix: incorrect unpkg url
+
 ## 4.0.1
 
 ### Patch Changes

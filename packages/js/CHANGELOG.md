@@ -1,5 +1,11 @@
 # @feedbackfarm/js
 
+## 1.0.2
+
+### Patch Changes
+
+- 8a7ac6f: fix: incorrect unpkg url
+
 ## 1.0.1
 
 ### Patch Changes
