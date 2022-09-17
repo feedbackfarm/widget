@@ -59,7 +59,7 @@ export default function FeedbackFarm(props: Props) {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://unpkg.com/feedback-farm-js@0.0.2/dist/widget.js";
+    script.src = "https://unpkg.com/@feedbackfarm/js@1.0.2/dist/widget.js";
     script.defer = true;
 
     document.head.appendChild(script);
