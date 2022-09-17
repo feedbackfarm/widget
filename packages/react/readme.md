@@ -1,6 +1,6 @@
 # Props
 
-![Banner](media/banner.jpeg)
+![Banner](../../media/banner.jpeg)
 
 # @feedbackfarm/react
 
