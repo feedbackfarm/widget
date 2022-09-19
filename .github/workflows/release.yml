@@ -23,6 +23,9 @@ jobs:
       - name: Install Dependencies
         run: npm i && npm i --prefix packages/react && npm i --prefix packages/js
 
+      - name: Lint
+        run: npm run lint --prefix packages/widget && npm run lint --prefix packages/react && npm run lint --prefix packages/js
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
