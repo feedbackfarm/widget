@@ -1,0 +1,6 @@
+{
+    "extends": [
+      "@apprentx/eslint-config"
+    ]
+  }
+  
