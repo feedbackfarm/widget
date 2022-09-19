@@ -1,5 +1,4 @@
 const triggers = document.querySelectorAll("[data-feedback-farm]");
-let outsideClickEventListener;
 
 function initializeTriggers() {
   // Load floatingUI
@@ -71,10 +70,7 @@ function closeWidget() {
 }
 
 function setupOutsideClickListener() {
-  outsideClickEventListener = document.addEventListener(
-    "click",
-    detectOutsideClick
-  );
+  document.addEventListener("click", detectOutsideClick);
 }
 
 function detectOutsideClick(e) {
@@ -100,18 +96,6 @@ function setupMessageListener() {
       }
     }
   });
-}
-
-function formatThemeParameter(theme) {
-  if (!theme) {
-    return {};
-  }
-
-  return theme.split(";").reduce(function (obj, str, index) {
-    const strParts = str.split(":");
-    obj[strParts[0].replace(/\s+/g, "")] = strParts[1];
-    return obj;
-  }, {});
 }
 
 function getDataParameters(trigger) {
