@@ -10,7 +10,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "lint": "eslint . --ext .ts"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,8 @@
     "@rollup/plugin-typescript": "^8.5.0",
     "@types/react": "^18.0.20",
     "esbuild": "^0.15.7",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
     "rollup": "^2.79.0",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-esbuild": "^4.10.1",
