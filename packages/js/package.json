@@ -1,6 +1,6 @@
 {
   "name": "@feedbackfarm/js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Feedback Farm JS Widget",
   "main": "dist/widget.js",
   "scripts": {
