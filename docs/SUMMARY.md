@@ -1,27 +1,22 @@
 # Table of contents
 
-* [Feedback Farm Widgets](README.md)
-
-## Widgets
-
-* [Integrate with your React App](widgets/integrate-with-your-react-app.md)
-* [Integrate with your html website](widgets/integrate-with-your-html-website.md)
-* [Integrate with your wordpress website](widgets/integrate-with-your-wordpress-website.md)
-* [Build your own](widgets/build-your-own.md)
-
-## Integrations
-
-* [Zapier](integrations/zapier.md)
-* [Logsnag](integrations/logsnag.md)
-* [Webhooks](integrations/webhooks.md)
-
-## Feedback Farm Web App
-
-* [Custom domain for public board](feedback-farm-web-app/custom-domain-for-public-board.md)
-
-## Reference
-
-* [API Reference](reference/api-reference/README.md)
-  * [Theme](reference/api-reference/theme.md)
-  * [Types](reference/api-reference/types.md)
-  * [Localization](reference/api-reference/localization.md)
+* [Changesets](README.md)
+  * [cyan-feet-boil](.changeset/cyan-feet-boil.md)
+* [Feedback Farm Widgets](docs/README.md)
+  * [Table of contents](docs/SUMMARY.md)
+  * [feedback-farm-web-app](docs/feedback-farm-web-app/README.md)
+    * [Custom domain for public board](docs/feedback-farm-web-app/custom-domain-for-public-board.md)
+  * [integrations](docs/integrations/README.md)
+    * [Logsnag](docs/integrations/logsnag.md)
+    * [Webhooks](docs/integrations/webhooks.md)
+    * [Zapier](docs/integrations/zapier.md)
+  * [widgets](docs/widgets/README.md)
+    * [Build your own](docs/widgets/build-your-own.md)
+    * [Integrate with your html website](docs/widgets/integrate-with-your-html-website.md)
+    * [Integrate with your React App](docs/widgets/integrate-with-your-react-app.md)
+    * [Integrate with your wordpress website](docs/widgets/integrate-with-your-wordpress-website.md)
+  * [reference](docs/reference/README.md)
+    * [API Reference](docs/reference/api-reference/README.md)
+      * [Localization](docs/reference/api-reference/localization.md)
+      * [Theme](docs/reference/api-reference/theme.md)
+      * [Types](docs/reference/api-reference/types.md)
