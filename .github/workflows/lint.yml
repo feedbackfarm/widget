@@ -2,7 +2,7 @@ name: Lint
 
 on:
   pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, synchronize]
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -20,7 +20,7 @@ jobs:
           node-version: 12.x
 
       - name: Install Dependencies
-        run: npm i && npm i --prefix packages/react && npm i --prefix packages/js
+        run: npm i && npm i --prefix packages/widget && npm i --prefix packages/react && npm i --prefix packages/js
 
       - name: Lint
         run: npm run lint --prefix packages/widget && npm run lint --prefix packages/react && npm run lint --prefix packages/js
