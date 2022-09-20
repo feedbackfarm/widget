@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx rollup --config rollup.config.ts",
     "dev": "npx tsc -w",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts --max-warnings=0"
   },
   "author": "codemers",
   "license": "MIT",
