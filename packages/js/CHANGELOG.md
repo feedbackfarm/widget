@@ -1,5 +1,11 @@
 # @feedbackfarm/js
 
+## 1.0.3
+
+### Patch Changes
+
+- 7410921: chore: Add ESlint to all packages
+
 ## 1.0.2
 
 ### Patch Changes
