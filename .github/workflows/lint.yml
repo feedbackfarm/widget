@@ -1,0 +1,26 @@
+name: Lint
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 12.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
+
+      - name: Install Dependencies
+        run: npm i && npm i --prefix packages/widget && npm i --prefix packages/react && npm i --prefix packages/js
+
+      - name: Lint
+        run: npm run lint --prefix packages/widget && npm run lint --prefix packages/react && npm run lint --prefix packages/js

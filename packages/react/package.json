@@ -1,6 +1,6 @@
 {
   "name": "@feedbackfarm/react",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "React widget for feedback.farm",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -10,7 +10,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "lint": "eslint . --ext .ts --max-warnings=0"
   },
   "repository": {
     "type": "git",
@@ -23,11 +24,16 @@
   },
   "homepage": "https://github.com/feedbackfarm/widget#readme",
   "devDependencies": {
+    "@apprentx/eslint-config": "^1.2.0",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^14.1.0",
     "@rollup/plugin-typescript": "^8.5.0",
     "@types/react": "^18.0.20",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
     "esbuild": "^0.15.7",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
     "rollup": "^2.79.0",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-esbuild": "^4.10.1",

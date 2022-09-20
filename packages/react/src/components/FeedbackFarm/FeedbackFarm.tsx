@@ -45,6 +45,28 @@ export type Props = {
   types?: TypeSelectorType[];
 };
 
+function getDataParameters(props: Props) {
+  const projectId = props.projectId;
+  const identifier = props.identifier || "";
+  const endImageUrl = encodeURIComponent(props.endImageUrl || "");
+  const pageName = props.pageName || window.location.pathname;
+  const theme = encodeURIComponent(JSON.stringify(props.theme) || "");
+  const localization = encodeURIComponent(
+    JSON.stringify(props.localization) || ""
+  );
+  const types = encodeURIComponent(JSON.stringify(props.types) || "");
+
+  return {
+    projectId,
+    identifier,
+    endImageUrl,
+    pageName,
+    theme,
+    localization,
+    types,
+  };
+}
+
 export default function FeedbackFarm(props: Props) {
   const {
     children,
@@ -58,12 +80,33 @@ export default function FeedbackFarm(props: Props) {
   } = props;
 
   useEffect(() => {
+    const feedbackFarmScript = document.getElementById("feedback-farm-script");
+    if (feedbackFarmScript) {
+      return;
+    }
+
     const script = document.createElement("script");
+    script.id = "feedback-farm-script";
     script.src = "https://unpkg.com/@feedbackfarm/js@1.0.2/dist/widget.js";
     script.defer = true;
-
     document.head.appendChild(script);
   }, []);
+
+  // When props changes, the query-string of the iFrame needs to be updated
+  useEffect(() => {
+    const iframe = document.getElementById(
+      "feedback-farm-iframe"
+    ) as HTMLIFrameElement | null;
+
+    if (iframe) {
+      const params: { [key: string]: string } = getDataParameters(props);
+      const queryString = Object.keys(params)
+        .map((key) => key + "=" + params[key])
+        .join("&");
+
+      iframe.src = `https://widget.feedback.farm?${queryString}`;
+    }
+  }, [props]);
 
   return React.cloneElement(children, {
     "data-feedback-farm-end-image-url": endImageUrl,
