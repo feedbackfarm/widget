@@ -108,7 +108,6 @@ export default function FeedbackFarm(props: Props) {
     }
   }, [props]);
 
-  console.log("clone");
   return React.cloneElement(children, {
     "data-feedback-farm-end-image-url": endImageUrl,
     "data-feedback-farm-identifier": identifier,
