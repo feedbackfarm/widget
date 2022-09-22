@@ -1,0 +1,12 @@
+{
+  "name": "@feedbackfarm/wordpress",
+  "version": "2.0.8",
+  "description": "Feedback Farm Wordpress Widget",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "author": "codemers",
+  "license": "MIT",
+  "devDependencies": {
+  }
+}
