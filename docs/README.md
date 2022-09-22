@@ -14,8 +14,8 @@ We officially support widget for REACT, HTML and Wordpress website
 [integrate-with-your-html-website.md](widgets/integrate-with-your-html-website.md)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="widgets/integrate-with-your-wordpress-website.md" %}
+[integrate-with-your-wordpress-website.md](widgets/integrate-with-your-wordpress-website.md)
 {% endcontent-ref %}
 
 ### Integrations
