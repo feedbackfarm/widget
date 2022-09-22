@@ -4,7 +4,7 @@
 
 ## Widgets
 
-* [Integrate with your React App](widgets/integrate-with-your-react-app.md)
+* [Integrate with your react App](widgets/integrate-with-your-react-app.md)
 * [Integrate with your html website](widgets/integrate-with-your-html-website.md)
 * [Integrate with your wordpress website](widgets/integrate-with-your-wordpress-website.md)
 * [Build your own](widgets/build-your-own.md)
