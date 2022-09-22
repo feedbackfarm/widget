@@ -4,10 +4,9 @@ on:
     branches:
       - feat/wordpress-package
 jobs:
-  defaults:
+  tag:
     run:
       working-directory: ./packages/wordpress
-  tag:
     name: New tag
     runs-on: ubuntu-latest
     steps:
