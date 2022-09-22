@@ -4,8 +4,6 @@
 
 We officially support widget for REACT, HTML and Wordpress website
 
-
-
 ### Widgets
 
 {% content-ref url="widgets/integrate-with-your-react-app.md" %}
@@ -33,8 +31,6 @@ We officially support widget for REACT, HTML and Wordpress website
 {% content-ref url="integrations/webhooks.md" %}
 [webhooks.md](integrations/webhooks.md)
 {% endcontent-ref %}
-
-
 
 ### API Reference
 
