@@ -1,3 +1,11 @@
 # Integrate with your wordpress website
 
-Docs here: [https://shy-universe-cf4.notion.site/Embed-Widget-In-A-Wordpress-website-ee5d756fcaab42629afedc264f075839](https://shy-universe-cf4.notion.site/Embed-Widget-In-A-Wordpress-website-ee5d756fcaab42629afedc264f075839)
+{% hint style="info" %}
+**Before you start:** You first need to create an account on [feedback.farm](https://feedback.farm).
+{% endhint %}
+
+## Get your Project id
+
+You can get your project id by going to [feedback.farm](https://feedback.farm) and select your project.
+
+## Installation
