@@ -5,10 +5,9 @@ on:
       - feat/wordpress-package
 jobs:
   tag:
-    run:
-      working-directory: ./packages/wordpress
     name: New tag
     runs-on: ubuntu-latest
+    working-directory: ./packages/wordpress
     steps:
       - uses: actions/checkout@master
       - name: WordPress Plugin Deploy
