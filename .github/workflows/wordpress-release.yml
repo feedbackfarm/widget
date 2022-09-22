@@ -15,4 +15,4 @@ jobs:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SLUG: feedback-farm
-        working-directory: ./packages/wordpress
+        working-directory: packages
