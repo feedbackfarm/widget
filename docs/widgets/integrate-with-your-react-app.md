@@ -1,4 +1,4 @@
-# Integrate with your React App
+# Integrate with your react App
 
 {% hint style="info" %}
 **Before you start:** You first need to create an account on [feedback.farm](https://feedback.farm).
