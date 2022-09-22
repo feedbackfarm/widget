@@ -4,13 +4,15 @@ on:
     branches:
       - feat/wordpress-package
 jobs:
+  defaults:
+    run:
+      working-directory: ./packages/wordpress
   tag:
     name: New tag
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: WordPress Plugin Deploy
-        working-directory: ./packages/wordpress
         uses: 10up/action-wordpress-plugin-deploy@stable
         env:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
