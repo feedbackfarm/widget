@@ -11,8 +11,8 @@ jobs:
       - uses: actions/checkout@master
       - name: WordPress Plugin Deploy
         uses: 10up/action-wordpress-plugin-deploy@stable
-        working-directory: ./packages/wordpress
         env:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SLUG: feedback-farm
+        working-directory: ./packages/wordpress
