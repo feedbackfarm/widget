@@ -13,7 +13,7 @@ You can get your project id by going to [feedback.farm](https://feedback.farm) a
 Our package is available on NPM
 
 {% tabs %}
-{% tab title="Node" %}
+{% tab title="React" %}
 
 ```
 # Install via NPM
