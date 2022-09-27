@@ -14,17 +14,19 @@ Follow the [official Wordpress plugin installation instruction](https://wordpres
 
 ## Configuration
 
-There's two ways of configuring the plugin. You can either add a "Give Feedback" button to your wordpress site menu or you can add the widget to any HTML element of your website.
+There's two ways of configuring the plugin. You can either add a "Give Feedback" button to your [wordpress site menu](https://docs.feedback.farm/integrate-with-your-wordpress-website#wordpress-menu-configuration) or you can add the widget to any [HTML element](https://docs.feedback.farm/widgets/integrate-with-your-wordpress-website#html-element-configuration) of your website.
 
 ### Wordpress Menu Configuration
 
 Go to the Wordpress admin panel and click on the Feedback Farm plugin configuration page.
 
-The simplest way to configure the plugin is to fill-up the project id field with the one you did get on feedback.farm website.
+Complete the "Project Id" field with your project id from feedback.farm.
 
-By doing this, a "Give Feedback" button will be added to your wordpress menu.
+Now in your menu, a "Give Feedback" button will be added.
 
-#### Advanced Configuration
+#### Advanced option
+
+Their is some advanced attributes that you cane use. Refer to the HTML widget [advanced option](https://docs.feedback.farm/widgets/integrate-with-your-html-website#advanced-option).
 
 ### HTML Element Configuration
 
@@ -43,3 +45,7 @@ You want to add those 2 attributes to the button to make it work with the Feedba
 ```
 
 Now when you click the button, you will see the widget.
+
+#### Advanced option
+
+Their is some advanced attributes that you cane use. Refer to the HTML widget [advanced option](https://docs.feedback.farm/widgets/integrate-with-your-html-website#advanced-option).
