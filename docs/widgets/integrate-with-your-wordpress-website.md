@@ -26,7 +26,7 @@ Now in your menu, a "Give Feedback" button will be added.
 
 #### Advanced option
 
-Their is some advanced attributes that you cane use. Refer to the HTML widget [advanced option](https://docs.feedback.farm/widgets/integrate-with-your-html-website#advanced-option).
+Their is some advanced attributes that you can use. Refer to the HTML widget [advanced option](https://docs.feedback.farm/widgets/integrate-with-your-html-website#advanced-option).
 
 ### HTML Element Configuration
 
@@ -48,4 +48,4 @@ Now when you click the button, you will see the widget.
 
 #### Advanced option
 
-Their is some advanced attributes that you cane use. Refer to the HTML widget [advanced option](https://docs.feedback.farm/widgets/integrate-with-your-html-website#advanced-option).
+Their is some advanced attributes that you can use. Refer to the HTML widget [advanced option](https://docs.feedback.farm/widgets/integrate-with-your-html-website#advanced-option).
