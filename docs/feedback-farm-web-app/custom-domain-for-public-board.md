@@ -10,7 +10,7 @@ First, go to your project [settings page](https://feedback.farm/app/projects) on
 
 Enable the public board by toggling the switch right to “Public Board”. Then in the input type the domain you want to use. For example “roadmap.gotwo.ca”. Press the button “save”
 
-![CleanShot 2022-04-17 at 13.01.31@2x.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/62151c60-a1d9-4e6a-87c9-02bfcb8c8037/CleanShot_2022-04-17_at_13.01.312x.png)
+![CleanShot 2022-04-17 at 13.01.31@2x.png](https://share.cleanshot.com/foFJkq)
 
 A window will open with the information you need to setup on your domain registrar.
 
