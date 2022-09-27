@@ -12,10 +12,10 @@ When you receive a new feedback, we'll send a HTTP POST payload to the URL you p
 
 ```js
 {
-	id: string,
-    text: string,
-	createdAt: Date,
-    type: 'BUG' | 'OTHER' | 'FEATURE',
-	identifier: string
+  id: string;
+  text: string;
+  createdAt: Date;
+  type: "BUG" | "OTHER" | "FEATURE";
+  identifier: string;
 }
 ```
