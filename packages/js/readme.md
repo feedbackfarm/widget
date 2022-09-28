@@ -1,7 +1,3 @@
-# Props
-
-![Banner](../../media/banner.jpeg)
-
 # @feedbackfarm/js
 
 ![Feedback Farm JS NPM version](https://img.shields.io/npm/v/@feedbackfarm/js/latest?color=red&label=%40feedbackfarm%2Fjs&registry_uri=https%3A%2F%2Fregistry.npmjs.com)
