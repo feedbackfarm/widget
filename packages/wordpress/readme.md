@@ -1,5 +1,3 @@
-# Props
-
 ![Banner](../../media/banner.jpeg)
 
 # @feedbackfarm/wordpress
