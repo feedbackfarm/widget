@@ -105,6 +105,7 @@ export default function FeedbackFarm(props: Props) {
         .join("&");
 
       iframe.src = `https://widget.feedback.farm?${queryString}`;
+      iframe.style.zIndex = "9999";
     }
   }, [props]);
 
