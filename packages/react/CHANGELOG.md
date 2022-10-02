@@ -1,5 +1,11 @@
 # @feedbackfarm/react
 
+## 4.0.6
+
+### Patch Changes
+
+- 56efd20: fix: z-index should be higher
+
 ## 4.0.5
 
 ### Patch Changes
