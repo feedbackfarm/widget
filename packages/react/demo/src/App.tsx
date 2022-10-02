@@ -4,15 +4,15 @@ import "./App.css";
 import { FeedbackFarm } from "@feedbackfarm/react";
 
 function App() {
-  const [test, setTest] = useState("");
+  const [identifier, setIdentifier] = useState("test");
+
   return (
     <div className="App">
-      <FeedbackFarm projectId="123" identifier={test}>
+      <FeedbackFarm projectId="123" identifier={identifier}>
         <button>Give Feedback</button>
       </FeedbackFarm>
 
-      <button onClick={() => setTest(Math.random().toString())}>test</button>
-      {test}
+      <button onClick={() => setIdentifier(`test2`)}>Change Identifier</button>
     </div>
   );
 }
