@@ -56,6 +56,7 @@ function setupIFrame() {
   iframe.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
   iframe.style.borderRadius = "18px";
   iframe.style.display = "none";
+  iframe.style.zIndex = "9999";
   document.body.append(iframe);
 }
 
