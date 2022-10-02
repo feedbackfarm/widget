@@ -107,7 +107,15 @@ export default function FeedbackFarm(props: Props) {
       iframe.src = `https://widget.feedback.farm?${queryString}`;
       iframe.style.zIndex = "9999";
     }
-  }, [props]);
+  }, [
+    props.endImageUrl,
+    props.identifier,
+    props.localization,
+    props.pageName,
+    props.projectId,
+    props.theme,
+    props.types,
+  ]);
 
   return React.cloneElement(children, {
     "data-feedback-farm-end-image-url": endImageUrl,
