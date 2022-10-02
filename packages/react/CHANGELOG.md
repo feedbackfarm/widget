@@ -1,5 +1,11 @@
 # @feedbackfarm/react
 
+## 4.0.7
+
+### Patch Changes
+
+- 663f3e6: fix: react packages re-render
+
 ## 4.0.6
 
 ### Patch Changes
