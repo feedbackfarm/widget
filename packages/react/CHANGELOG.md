@@ -1,5 +1,11 @@
 # @feedbackfarm/react
 
+## 4.0.8
+
+### Patch Changes
+
+- 2ddf928: Fix z-index
+
 ## 4.0.7
 
 ### Patch Changes
