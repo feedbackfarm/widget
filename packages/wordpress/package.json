@@ -1,6 +1,6 @@
 {
   "name": "@feedbackfarm/wordpress",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Feedback Farm Wordpress Widget",
   "main": "index.js",
   "scripts": {
