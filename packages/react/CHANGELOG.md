@@ -1,5 +1,11 @@
 # @feedbackfarm/react
 
+## 4.0.9
+
+### Patch Changes
+
+- 43f4c8c: update: JS script to 1.0.5
+
 ## 4.0.8
 
 ### Patch Changes
