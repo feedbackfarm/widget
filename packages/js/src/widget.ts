@@ -1,5 +1,3 @@
-const triggers = document.querySelectorAll("[data-feedback-farm]");
-
 function initializeTriggers() {
   // Load floatingUI
   const popperScript = document.createElement("script");
@@ -7,39 +5,12 @@ function initializeTriggers() {
   popperScript.defer = true;
   document.head.appendChild(popperScript);
 
-  triggers.forEach((trigger) => {
-    trigger.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      const feedbackFarmIFrame = document.getElementById(
-        "feedback-farm-iframe"
-      );
-      if (!feedbackFarmIFrame) {
-        return;
-      }
-      feedbackFarmIFrame.style.display = "block";
-
-      setupOutsideClickListener();
-
-      // Position widget
-      // @ts-expect-error
-      window.Popper.createPopper(trigger, feedbackFarmIFrame, {
-        placement: "bottom",
-        modifiers: [
-          {
-            name: "offset",
-            options: {
-              offset: [0, 10],
-            },
-          },
-        ],
-      });
-    });
-  });
+  document.body.addEventListener("click", detectTriggerClick);
+  setupOutsideClickListener();
 }
 
 function setupIFrame() {
-  const [trigger] = triggers;
+  const [trigger] = document.querySelectorAll("[data-feedback-farm]");
   if (!trigger) return;
 
   const params = getDataParameters(trigger);
@@ -74,7 +45,40 @@ function setupOutsideClickListener() {
   document.addEventListener("click", detectOutsideClick);
 }
 
+function detectTriggerClick(e) {
+  const triggers = document.querySelectorAll("[data-feedback-farm]");
+  for (let i = 0; i < triggers.length; i++) {
+    if (triggers[i] === e.target) {
+      e.preventDefault();
+      const feedbackFarmIFrame = document.getElementById(
+        "feedback-farm-iframe"
+      );
+
+      if (!feedbackFarmIFrame) {
+        return;
+      }
+      feedbackFarmIFrame.style.display = "block";
+
+      // Position widget
+      // @ts-expect-error
+      window.Popper.createPopper(triggers[i], feedbackFarmIFrame, {
+        placement: "bottom",
+        modifiers: [
+          {
+            name: "offset",
+            options: {
+              offset: [0, 10],
+            },
+          },
+        ],
+      });
+      return true;
+    }
+  }
+}
+
 function detectOutsideClick(e) {
+  const triggers = document.querySelectorAll("[data-feedback-farm]");
   let clickOutside = true;
 
   for (let i = 0; i < triggers.length; i++) {
@@ -129,6 +133,6 @@ function getDataParameters(trigger) {
   };
 }
 
-initializeTriggers();
 setupIFrame();
+initializeTriggers();
 setupMessageListener();
