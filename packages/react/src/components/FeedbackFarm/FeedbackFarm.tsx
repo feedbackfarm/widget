@@ -87,7 +87,7 @@ export default function FeedbackFarm(props: Props) {
 
     const script = document.createElement("script");
     script.id = "feedback-farm-script";
-    script.src = "https://unpkg.com/@feedbackfarm/js@1.0.4/dist/widget.js";
+    script.src = "https://unpkg.com/@feedbackfarm/js@1.0.5/dist/widget.js";
     script.defer = true;
     document.head.appendChild(script);
   }, []);
