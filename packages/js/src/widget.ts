@@ -59,6 +59,7 @@ function detectTriggerClick(e) {
       }
       feedbackFarmIFrame.style.display = "block";
 
+      setupOutsideClickListener();
       // Position widget
       // @ts-expect-error
       window.Popper.createPopper(triggers[i], feedbackFarmIFrame, {
