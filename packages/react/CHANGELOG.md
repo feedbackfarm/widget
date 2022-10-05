@@ -1,5 +1,11 @@
 # @feedbackfarm/react
 
+## 4.0.10
+
+### Patch Changes
+
+- a78d2c5: update: Bump to 1.0.6 JS widget script in differents package
+
 ## 4.0.9
 
 ### Patch Changes
