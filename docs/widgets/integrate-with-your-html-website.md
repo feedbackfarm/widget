@@ -32,7 +32,7 @@ You then want to add the script and the attributes to the button
 <html>
   <head>
     <script
-      src="https://unpkg.com/@feedbackfarm/js@1.0.5/dist/widget.js"
+      src="https://unpkg.com/@feedbackfarm/js@1.0.6/dist/widget.js"
       defer
     ></script>
   </head>
