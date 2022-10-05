@@ -9,7 +9,7 @@
 **/
 
 function feedback_farm_enqueue_script() {
-    wp_register_script( 'feedback-farm', "https://unpkg.com/@feedbackfarm/js@1.0.5/dist/widget.js", [], null, true);
+    wp_register_script( 'feedback-farm', "https://unpkg.com/@feedbackfarm/js@1.0.6/dist/widget.js", [], null, true);
     wp_enqueue_script('feedback-farm');
 }
 add_action('wp_enqueue_scripts', 'feedback_farm_enqueue_script');
