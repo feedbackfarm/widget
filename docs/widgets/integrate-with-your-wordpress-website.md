@@ -1,4 +1,4 @@
-# Integrate with your wordpress website
+# Integrate with your Wordpress website
 
 {% hint style="info" %}
 **Before you start:** You first need to create an account on [feedback.farm](https://feedback.farm).

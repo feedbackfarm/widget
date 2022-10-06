@@ -1,10 +1,12 @@
-# Feedback Farm Widgets
+# Welcome
+
+feedback.farm allow you to collect feedback from your customers and make your SaaS app better.
 
 ## Want to start collecting feedback?
 
-We officially support widget for REACT, HTML and Wordpress website
+We officially support widget for React, HTML and Wordpress website
 
-### Widgets
+### Widget
 
 {% content-ref url="widgets/integrate-with-your-react-app.md" %}
 [integrate-with-your-react-app.md](widgets/integrate-with-your-react-app.md)
@@ -18,7 +20,7 @@ We officially support widget for REACT, HTML and Wordpress website
 [integrate-with-your-wordpress-website.md](widgets/integrate-with-your-wordpress-website.md)
 {% endcontent-ref %}
 
-### Integrations
+### Integration
 
 {% content-ref url="integrations/zapier.md" %}
 [zapier.md](integrations/zapier.md)

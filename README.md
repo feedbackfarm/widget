@@ -8,6 +8,6 @@
 
 Collect feedback with a simple widget. This repo contains the official [Feedback Farm](https://feedback.farm?ref=packages) packages.
 
-- [@feedbackfarm/react](packages/react) - Collect feedback within your react app.
+- [@feedbackfarm/react](packages/react) - Collect feedback within your React app.
 - [@feedbackfarm/js](packages/js) - The script thats load feedback farm widget on your html website.
 - [@feedbackfarm/wordpress](packages/wordpress) - Wordpress plugin

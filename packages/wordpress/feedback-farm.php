@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Feedback Farm
 * Plugin URI: https://www.feedback.farm/
-* Description: Gathering customer feedback should be easy and affordable. Feedback is one of the most useful metric while building an application. Easily embed the wordpress plugin to start getting user feedback.
+* Description: Gathering customer feedback should be easy and affordable. Feedback is one of the most useful metric while building an application. Easily embed the Wordpress plugin to start getting user feedback.
 * Version: 2.0.8
 * Author: Charles-Olivier Demers
 * Author URI: https://www.twitter.com/co_demers
