@@ -1,6 +1,6 @@
 # Table of contents
 
-- [Feedback Farm Widgets](README.md)
+- [Welcome](README.md)
 
 ## Widget
 
