@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Lottie from "react-lottie";
 
 import { FeedbackType } from "../types/feedback";
 import Header from "./Header";
@@ -6,8 +7,10 @@ import Button from "./Button";
 import PoweredBy from "./PoweredBy";
 import useTheme from "../hooks/useTheme";
 
+import * as animationData from "./../lottie/success.json";
+
 type Props = {
-  endImageUrl: string;
+  endImageUrl?: string;
   localization: { [key: string]: any };
   onClose: () => void;
   onSendAnotherFeedback: () => void;
@@ -29,11 +32,24 @@ export default function FeedbackSubmitted(props: Props) {
           onClose={onClose}
         />
         <div className="mt-16 flex flex-col items-center">
-          <img
-            src={endImageUrl}
-            alt={localization.submitFeedbackMessage}
-            className="w-20"
-          />
+          {endImageUrl && (
+            <img
+              src={endImageUrl}
+              alt={localization.submitFeedbackMessage}
+              className="w-20"
+            />
+          )}
+          {!endImageUrl && (
+            <Lottie
+              options={{
+                loop: false,
+                autoplay: true,
+                animationData: animationData,
+              }}
+              height={80}
+              width={80}
+            />
+          )}
           <span className="mt-2 text-sm font-bold">
             {localization.submitFeedbackMessage}
           </span>

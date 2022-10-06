@@ -28,7 +28,7 @@ const defaultTypes = [
 ];
 
 function getParameters(query: ParsedUrlQuery) {
-  const endImageUrl = (query.endImageUrl as string) || "/svg/party.svg";
+  const endImageUrl = query.endImageUrl as string;
   const identifier = (query.identifier as string) || "";
   const localizationParams = JSON.parse((query.localization as string) || "{}");
   const pageName = (query.pageName as string) || "";
