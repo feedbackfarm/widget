@@ -18,7 +18,7 @@ export default function TypeSelector(props: Props) {
       {types.map((type) => (
         <button
           key={type.type}
-          className="flex flex-col items-center"
+          className="flex flex-col items-center transition duration-100 hover:scale-110"
           onClick={() => onSelect(type.type)}
         >
           <div

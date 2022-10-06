@@ -17,7 +17,10 @@ export default function Header(props: Props) {
       <h1 className="font-bold text-md" style={{ color: theme.textColor }}>
         {title}
       </h1>
-      <button onClick={onClose}>
+      <button
+        onClick={onClose}
+        className="transition duration-300 hover:scale-[120%]"
+      >
         <XMarkIcon className="w-5 h-5 text-gray-400" />
       </button>
     </div>
