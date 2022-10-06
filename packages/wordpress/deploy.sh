@@ -6,7 +6,7 @@
 # main config
 PLUGINSLUG="feedback-farm"
 CURRENTDIR=`pwd`
-MAINFILE="feedback-farm.php" # this should be the name of your main php file in the wordpress plugin
+MAINFILE="feedback-farm.php" # this should be the name of your main php file in the Wordpress plugin
 
 # git config
 PACKAGEDIR="$CURRENTDIR/" # this file should be in the base of your git repository

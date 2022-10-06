@@ -1,4 +1,4 @@
-# Integrate with your react App
+# Integrate with your React App
 
 {% hint style="info" %}
 **Before you start:** You first need to create an account on [feedback.farm](https://feedback.farm).
@@ -25,7 +25,7 @@ npm install @feedbackfarm/react
 
 ## Add the widget to your site
 
-Suppose that you have a react website looking like this
+Suppose that you have a React website looking like this
 
 ```jsx
 // index.jsx
